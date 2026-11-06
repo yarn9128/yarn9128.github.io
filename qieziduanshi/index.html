@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茄子短视频-茄子短视频怎么玩_短视频创作与短片分享平台</title>
+<meta name="description" content="茄子短视频是一个围绕短片创作与分享的内容平台。这里介绍茄子短视频的创作工具、话题玩法、社区规则与常见问题，帮助你快速上手并找到适合自己的短视频节奏。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236d3bd6'/%3E%3Cpath d='M24 18c0-3 2-5 5-5s5 2 5 5v10l8-5c3-2 6-1 7 2s0 6-3 7l-9 5 9 5c3 1 4 4 3 7s-4 3-7 2l-8-5v10c0 3-2 5-5 5s-5-2-5-5V18z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --eggplant:#5b2ea6;
+  --eggplant-deep:#3d1c76;
+  --eggplant-soft:#efe9fb;
+  --leaf:#2f8a5b;
+  --ink:#1e1a24;
+  --ink-soft:#5b5568;
+  --line:#e6e1f0;
+  --bg:#fbfaff;
+  --card:#ffffff;
+  --accent:#f2b01e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,250,255,.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;min-height:68px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;color:var(--eggplant-deep)}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;
+  background:linear-gradient(140deg,var(--eggplant),#8a5ce0);
+  display:grid;place-items:center;flex:none;
+  box-shadow:0 6px 16px rgba(91,46,166,.28);
+}
+.brand-mark svg{width:22px;height:22px}
+.nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.nav a{
+  font-size:14.5px;color:var(--ink-soft);padding:8px 12px;border-radius:9px;
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+.nav a:hover,.nav a:focus-visible{background:var(--eggplant-soft);color:var(--eggplant-deep)}
+.nav .nav-cta{
+  background:var(--eggplant);color:#fff;font-weight:600;padding:9px 16px;margin-left:6px;
+}
+.nav .nav-cta:hover,.nav .nav-cta:focus-visible{background:var(--eggplant-deep);color:#fff}
+
+/* Hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 56px;
+  background:
+    radial-gradient(900px 420px at 85% -10%,rgba(138,92,224,.16),transparent 62%),
+    radial-gradient(700px 380px at 0% 110%,rgba(47,138,91,.12),transparent 60%),
+    var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--eggplant-deep);
+  background:var(--eggplant-soft);border:1px solid #ddd2f5;
+  padding:6px 14px;border-radius:999px;margin-bottom:20px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);flex:none}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.22;font-weight:800;letter-spacing:1px;
+  color:var(--eggplant-deep);margin-bottom:18px;
+}
+.hero-lead{font-size:17px;color:var(--ink-soft);max-width:34em;margin-bottom:28px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:15px;font-weight:600;padding:13px 24px;border-radius:12px;
+  border:1px solid transparent;cursor:pointer;transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:var(--eggplant);color:#fff;box-shadow:0 10px 24px rgba(91,46,166,.26)}
+.btn-primary:hover,.btn-primary:focus-visible{background:var(--eggplant-deep);transform:translateY(-1px)}
+.btn-ghost{background:#fff;color:var(--eggplant-deep);border-color:#d8cdf1}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--eggplant-soft)}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
+.hero-note{margin-top:18px;font-size:13.5px;color:#8b8398}
+
+/* Phone mock */
+.phone-stage{display:flex;justify-content:center;position:relative}
+.phone{
+  width:262px;border-radius:34px;background:#241a38;
+  padding:12px;box-shadow:0 28px 60px rgba(61,28,118,.28);
+  border:1px solid #3a2b57;transform:rotate(-2.5deg);
+}
+.phone-screen{
+  background:#f7f4ff;border-radius:24px;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.screen-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 12px 8px;font-size:11px;color:#6b6280;font-weight:600;
+}
+.screen-top .live{color:#d94a5f}
+.screen-body{
+  position:relative;aspect-ratio:9/13;
+  background:linear-gradient(160deg,#7d4fd4,#3d1c76 65%,#241044);
+  display:grid;place-items:center;color:#fff;text-align:center;padding:14px;
+}
+.screen-body .play{
+  width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.18);
+  border:1.5px solid rgba(255,255,255,.55);display:grid;place-items:center;margin:0 auto 12px;
+}
+.screen-body .cap{font-size:12.5px;line-height:1.6;opacity:.9;max-width:15em}
+.screen-body::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(260px 160px at 50% 0%,rgba(255,255,255,.16),transparent 70%);
+  pointer-events:none;
+}
+.screen-bar{
+  display:flex;justify-content:space-around;align-items:center;
+  padding:9px 6px 12px;font-size:10.5px;color:#7a7190;
+}
+.screen-bar span{display:flex;flex-direction:column;align-items:center;gap:3px}
+.screen-bar .active{color:var(--eggplant);font-weight:700}
+.float-tag{
+  position:absolute;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:9px 13px;font-size:12.5px;font-weight:600;color:var(--eggplant-deep);
+  box-shadow:0 10px 26px rgba(61,28,118,.14);
+}
+.float-tag.t1{top:14px;left:-6px;transform:rotate(-4deg)}
+.float-tag.t2{bottom:26px;right:-8px;transform:rotate(3deg);color:var(--leaf)}
+
+/* Stats strip */
+.stats{border-bottom:1px solid var(--line);background:#fff}
+.stats-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+  padding:26px 0;
+}
+.stat{text-align:center;padding:0 6px}
+.stat b{display:block;font-size:24px;font-weight:800;color:var(--eggplant-deep);line-height:1.3}
+.stat span{font-size:13px;color:var(--ink-soft)}
+
+/* Sections */
+section{padding:66px 0}
+.section-head{max-width:42em;margin-bottom:36px}
+.section-head h2{
+  font-size:clamp(23px,2.8vw,30px);line-height:1.35;font-weight:800;
+  color:var(--eggplant-deep);margin-bottom:12px;letter-spacing:.5px;
+}
+.section-head p{color:var(--ink-soft);font-size:15.5px}
+.kicker{
+  font-size:13px;font-weight:700;letter-spacing:2px;
+  color:var(--leaf);text-transform:uppercase;margin-bottom:10px;
+}
+
+/* Feature cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:26px 24px;transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(61,28,118,.09);border-color:#d8cdf1}
+.card-icon{
+  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+  background:var(--eggplant-soft);margin-bottom:18px;
+}
+.card-icon svg{width:23px;height:23px}
+.card h3{font-size:17.5px;font-weight:700;margin-bottom:9px;color:var(--ink)}
+.card p{font-size:14.5px;color:var(--ink-soft)}
+
+/* Guide / steps */
+.guide{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+.step{
+  position:relative;background:var(--bg);border:1px solid var(--line);
+  border-radius:16px;padding:24px 20px 22px;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  display:block;font-size:13px;font-weight:800;letter-spacing:1.5px;
+  color:var(--accent);margin-bottom:12px;
+}
+.step h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.step p{font-size:14px;color:var(--ink-soft)}
+
+/* Two column: topics + note */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.topic-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.topic-list li{
+  display:flex;gap:14px;align-items:flex-start;
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+}
+.topic-list .tnum{
+  flex:none;width:28px;height:28px;border-radius:8px;
+  background:var(--eggplant-soft);color:var(--eggplant-deep);
+  font-size:13px;font-weight:800;display:grid;place-items:center;margin-top:2px;
+}
+.topic-list h3{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.topic-list p{font-size:14px;color:var(--ink-soft)}
+.aside-card{
+  background:linear-gradient(165deg,#f5f1ff,#ffffff 70%);
+  border:1px solid #ded4f3;border-radius:20px;padding:28px 26px;
+}
+.aside-card h3{font-size:18px;font-weight:800;color:var(--eggplant-deep);margin-bottom:14px}
+.aside-card p{font-size:14.5px;color:var(--ink-soft);margin-bottom:14px}
+.aside-card ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.aside-card li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-soft)}
+.aside-card li svg{flex:none;width:16px;height:16px;margin-top:5px}
+
+/* FAQ */
+.faq{background:#fff;border-top:1px solid var(--line)}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px}
+details{
+  background:var(--bg);border:1px solid var(--line);border-radius:14px;
+  padding:0 22px;transition:border-color .18s;
+}
+details[open]{border-color:#d8cdf1;background:#fff}
+summary{
+  list-style:none;cursor:pointer;padding:18px 0;
+  font-size:15.5px;font-weight:700;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary .plus{
+  flex:none;width:22px;height:22px;border-radius:50%;border:1px solid #cfc3ea;
+  display:grid;place-items:center;font-weight:700;color:var(--eggplant);font-size:14px;
+  transition:transform .2s;
+}
+details[open] summary .plus{transform:rotate(45deg)}
+details p{font-size:14.5px;color:var(--ink-soft);padding:0 0 20px}
+
+/* Download CTA */
+.download{
+  background:linear-gradient(150deg,var(--eggplant-deep),#5b2ea6 60%,#7a4ed2);
+  color:#fff;border-radius:24px;padding:46px 44px;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.download h2{font-size:clamp(22px,2.6vw,28px);font-weight:800;margin-bottom:10px;letter-spacing:.5px}
+.download p{font-size:15px;color:#e4d9fb;max-width:34em}
+.download .btn-dl{
+  background:#fff;color:var(--eggplant-deep);font-weight:700;
+  padding:14px 30px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;
+  font-size:15.5px;box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+.download .btn-dl[aria-disabled="true"]{opacity:.6;cursor:not-allowed;pointer-events:none}
+.download small{display:block;margin-top:10px;font-size:12.5px;color:#cbbaf0;text-align:center}
+
+/* Footer */
+.site-footer{background:#1b1428;color:#b9b0cc;padding:46px 0 30px;margin-top:66px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.footer-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#fff;margin-bottom:14px}
+.footer-brand .brand-mark{width:32px;height:32px;border-radius:10px;box-shadow:none}
+.footer-brand .brand-mark svg{width:18px;height:18px}
+.site-footer p{font-size:13.5px;line-height:1.8;color:#a49bb8;max-width:26em}
+.site-footer h4{font-size:14px;color:#fff;margin-bottom:14px;font-weight:700}
+.site-footer ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:13.5px}
+.site-footer ul a{color:#a49bb8;transition:color .16s}
+.site-footer ul a:hover,.site-footer ul a:focus-visible{color:#fff}
+.footer-bottom{
+  border-top:1px solid #312641;padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#8a8199;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .phone-stage{order:2}
+  .phone{transform:rotate(-1.5deg)}
+  .cards{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:32px}
+  .stats-inner{grid-template-columns:1fr 1fr;gap:22px 10px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .header-inner{flex-wrap:wrap;padding:12px 0;gap:10px}
+  .nav{width:100%;justify-content:flex-start;gap:2px}
+  .nav a{padding:7px 9px;font-size:13.5px}
+  .nav .nav-cta{margin-left:0;padding:8px 13px}
+  .hero{padding:42px 0 40px}
+  .hero-lead{font-size:15.5px}
+  .btn{padding:12px 20px;font-size:14.5px}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .download{padding:34px 24px;border-radius:20px}
+  .footer-grid{grid-template-columns:1fr;gap:26px}
+  .float-tag{display:none}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="茄子短视频首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 5.5c0-1.1.8-2 1.9-2s1.9.9 1.9 2v4l3.4-2c1-.6 2.2-.2 2.7.8.6 1 .2 2.2-.8 2.7l-3.6 2.1 3.6 2.1c1 .6 1.4 1.8.8 2.7-.6 1-1.8 1.3-2.7.8l-3.4-2v4c0 1.1-.8 2-1.9 2s-1.9-.9-1.9-2V5.5Z" fill="#fff"/></svg>
+      </span>
+      茄子短视频
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#features">平台特色</a>
+      <a href="#start">新手入门</a>
+      <a href="#topics">内容方向</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#download">获取客户端</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>短片创作 · 话题参与 · 社区分享</span>
+        <h1>茄子短视频</h1>
+        <p class="hero-lead">茄子短视频是一个围绕短片创作与分享的内容社区。从竖屏拍摄、分段剪辑到话题挑战与合拍互动，你可以在这里完成一条短片的完整流程，也能浏览不同创作者对同一话题的表达。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#start">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14l11-7L8 5Z" fill="#fff"/></svg>
+            查看入门指南
+          </a>
+          <a class="btn btn-ghost" href="#topics">浏览内容方向</a>
+        </div>
+        <p class="hero-note">初次使用建议先阅读平台特色与社区规范，再开始发布第一条短片。</p>
+      </div>
+
+      <div class="phone-stage" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="screen-top"><span>推荐</span><span class="live">● 热门话题</span></div>
+            <div class="screen-body">
+              <div>
+                <div class="play">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 6v12l10-6L9 6Z" fill="#fff"/></svg>
+                </div>
+                <div class="cap">竖屏构图 · 分段剪辑<br>茄子短视频创作示例</div>
+              </div>
+            </div>
+            <div class="screen-bar">
+              <span class="active">首页</span>
+              <span>话题</span>
+              <span>拍摄</span>
+              <span>消息</span>
+            </div>
+          </div>
+        </div>
+        <div class="float-tag t1">竖屏 9:16 拍摄</div>
+        <div class="float-tag t2">话题一键参与</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="wrap stats-inner">
+      <div class="stat"><b>9:16</b><span>竖屏创作画幅</span></div>
+      <div class="stat"><b>3 步</b><span>拍摄到发布流程</span></div>
+      <div class="stat"><b>多类</b><span>话题与内容分区</span></div>
+      <div class="stat"><b>合拍</b><span>创作者互动方式</span></div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Platform</p>
+        <h2>茄子短视频能做什么</h2>
+        <p>平台把拍摄、剪辑、话题和互动放在同一条链路里。下面三项是日常使用中最常接触的能力，了解它们有助于判断茄子短视频是否适合你的创作习惯。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" stroke="#5b2ea6" stroke-width="1.8"/><path d="M10 10v4l3.5-2L10 10Z" fill="#5b2ea6"/></svg>
+          </div>
+          <h3>竖屏拍摄与分段剪辑</h3>
+          <p>围绕 9:16 竖屏画幅组织画面，支持按片段拍摄后拼接，添加字幕与配乐，适合口播、教程和日常记录这类短时长内容。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h9M4 12h13M4 17h7" stroke="#5b2ea6" stroke-width="1.8" stroke-linecap="round"/><circle cx="18.5" cy="7" r="2" fill="#5b2ea6"/></svg>
+          </div>
+          <h3>话题与内容分区</h3>
+          <p>茄子短视频按话题聚合短片，创作者可以在发布时选择对应话题，让作品进入更匹配的浏览场景，也便于观众沿话题连续观看。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="#5b2ea6" stroke-width="1.7"/><path d="M3.5 19c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4M13 19c.5-2 1.8-3.2 3.4-3.2 1.7 0 3 1.2 3.6 3.2" stroke="#5b2ea6" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>评论、合拍与互动</h3>
+          <p>观众可在短片下留言交流，创作者之间可以通过合拍对同一素材做出不同演绎。互动记录集中呈现，方便回看与自己相关的内容。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start guide -->
+  <section id="start" class="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Getting Started</p>
+        <h2>第一次用茄子短视频怎么开始</h2>
+        <p>对新手来说，最省力的路径是先用默认画幅拍一条 15 秒左右的短片，熟悉流程后再逐步加入字幕、配乐和话题。下面四步覆盖了从准备到发布的主要环节。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确定一条短主题</h3>
+          <p>一条短片只讲一件事，例如一个技巧、一段见闻或一次对比。主题越集中，前几秒越容易留住观众。</p>
+        </div>
+        <div class="step">
+          <h3>竖屏拍摄素材</h3>
+          <p>保持手机竖直、光线稳定，尽量一次拍完整段落。需要多角度时按顺序分段拍摄，后期再调整顺序。</p>
+        </div>
+        <div class="step">
+          <h3>剪辑与配字幕</h3>
+          <p>裁掉开头结尾的多余部分，控制节奏。口播类内容建议加上字幕，让静音观看的人也能理解。</p>
+        </div>
+        <div class="step">
+          <h3>选话题后发布</h3>
+          <p>发布时填写简短标题并选择匹配话题，检查封面是否清晰，确认无误后再提交，方便作品被正确归类。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics + aside -->
+  <section id="topics">
+    <div class="wrap split">
+      <div>
+        <div class="section-head" style="margin-bottom:26px">
+          <p class="kicker">Content</p>
+          <h2>茄子短视频上常见的内容方向</h2>
+          <p>不同方向对时长、节奏和画面的要求并不相同。选择与自身条件匹配的方向，比追逐单一热门形式更容易持续更新。</p>
+        </div>
+        <ul class="topic-list">
+          <li>
+            <span class="tnum" aria-hidden="true">1</span>
+            <div>
+              <h3>生活记录与城市见闻</h3>
+              <p>以日常场景为素材，强调真实感与连续性。适合随手拍摄，重点在于找到稳定的叙事视角。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tnum" aria-hidden="true">2</span>
+            <div>
+              <h3>技能教学与经验分享</h3>
+              <p>把步骤拆成可跟做的片段，开头先给出结果。字幕和分镜在茄子短视频的这类内容中尤其重要。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tnum" aria-hidden="true">3</span>
+            <div>
+              <h3>话题挑战与合拍演绎</h3>
+              <p>围绕统一话题或同一段素材进行再创作，适合希望借互动获得曝光的创作者，也便于观众参与。</p>
+            </div>
+          </li>
+          <li>
+            <span class="tnum" aria-hidden="true">4</span>
+            <div>
+              <h3>美食、手作与兴趣展示</h3>
+              <p>画面细节丰富的内容，需要更注意光线与构图。用近景呈现关键步骤，能减少观众的理解成本。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="aside-card">
+        <h3>发布前的自查清单</h3>
+        <p>在茄子短视频提交作品之前，花一分钟核对以下几项，可以减少返工和误发布。</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke="#2f8a5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            竖屏画面是否被裁切到关键内容
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke="#2f8a5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            标题是否简短且与画面一致
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke="#2f8a5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            话题选择是否与内容方向匹配
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke="#2f8a5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            封面是否能在小尺寸下看清
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke="#2f8a5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            配乐与素材是否符合社区规范
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>关于茄子短视频的常见问题</h2>
+        <p>以下问题来自初次接触茄子短视频时最常出现的疑问，回答以平台当前呈现的功能与使用方式为准。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>茄子短视频适合完全没有拍摄经验的人吗？<span class="plus" aria-hidden="true">+</span></summary>
+          <p>适合。平台默认使用竖屏画幅，拍摄与剪辑按片段组织，新手可以先拍一条十几秒的短片完成整个流程。真正影响成片质量的是主题是否集中、画面是否稳定，这两点通过几次练习就能明显改善。</p>
+        </details>
+        <details>
+          <summary>一条短片多长比较合适？<span class="plus" aria-hidden="true">+</span></summary>
+          <p>取决于内容类型。教学和口播类内容通常需要把步骤讲清，时长会略长；生活记录与话题挑战则更适合短一些。建议先把要表达的核心信息写完，再决定需要多少画面，而不是先定时长。</p>
+        </details>
+        <details>
+          <summary>发布后还能修改标题或话题吗？<span class="plus" aria-hidden="true">+</span></summary>
+          <p>平台对已发布内容的可编辑范围有具体规则，标题、话题与封面的调整能力可能随版本变化。建议在发布前按自查清单逐项确认，避免发布后才发现归类或表述不合适。</p>
+        </details>
+        <details>
+          <summary>如何参与话题和合拍？<span class="plus" aria-hidden="true">+</span></summary>
+          <p>在话题页面可以看到该话题下的短片集合，进入发布流程时选择对应话题即可。合拍通常从已有短片的互动入口发起，具体入口位置以客户端当前版本显示的界面为准。</p>
+        </details>
+        <details>
+          <summary>在茄子短视频发布内容需要注意什么？<span class="plus" aria-hidden="true">+</span></summary>
+          <p>使用他人素材、音乐或肖像前应确认授权，避免发布侵权与违规内容。平台会依据社区规范处理举报内容，创作者也可以对不友善评论进行管理。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>开始你的第一条茄子短视频</h2>
+          <p>准备好主题与素材后，即可进入拍摄流程。建议先在安静环境中试拍一段，熟悉剪辑与话题选择，再正式发布。</p>
+        </div>
+        <div>
+          <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" stroke="#3d1c76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            下载
+          </a>
+          <small>客户端下载入口即将开放</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 5.5c0-1.1.8-2 1.9-2s1.9.9 1.9 2v4l3.4-2c1-.6 2.2-.2 2.7.8.6 1 .2 2.2-.8 2.7l-3.6 2.1 3.6 2.1c1 .6 1.4 1.8.8 2.7-.6 1-1.8 1.3-2.7.8l-3.4-2v4c0 1.1-.8 2-1.9 2s-1.9-.9-1.9-2V5.5Z" fill="#fff"/></svg>
+          </span>
+          茄子短视频
+        </div>
+        <p>茄子短视频关注短片创作与社区分享，为创作者提供从拍摄到发布的完整路径，也为观众提供按话题浏览短片的入口。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="#features">平台特色</a></li>
+          <li><a href="#start">新手入门</a></li>
+          <li><a href="#topics">内容方向</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>创作参考</h4>
+        <ul>
+          <li><a href="#topics">发布前自查清单</a></li>
+          <li><a href="#start">竖屏拍摄与剪辑</a></li>
+          <li><a href="#faq">社区规范说明</a></li>
+          <li><a href="#download">客户端下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 茄子短视频 · 短片创作与分享</span>
+      <span>内容以平台实际功能与版本为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
