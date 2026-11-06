@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>咕咕番-咕咕番在线观看_咕咕番动漫追番入口与更新表</title>
+<meta name="description" content="咕咕番是一个面向动漫爱好者的追番主题页面，整理咕咕番的番剧分类、更新节奏、追番方法与常见问题，帮助你快速找到想看的内容并建立自己的追番清单。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b2a4a'/%3E%3Cpath d='M20 22h24v6H20zM20 32h16v6H20zM20 42h20v6H20z' fill='%2359d1c8'/%3E%3Ccircle cx='46' cy='44' r='7' fill='%23ffb454'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#16233c;
+  --ink-soft:#4a5875;
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --line:#e2e6f0;
+  --brand:#1b2a4a;
+  --accent:#ff7a45;
+  --teal:#2aa79b;
+  --amber:#ffb454;
+  --radius:16px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,247,251,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;gap:18px;
+  min-height:66px;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+.logo .mark{
+  width:38px;height:38px;border-radius:11px;
+  background:var(--brand);
+  display:grid;place-items:center;flex:none;
+}
+.logo .mark svg{width:22px;height:22px}
+.logo .brand-text{
+  font-size:20px;color:var(--brand);
+  white-space:nowrap;
+}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  font-size:14.5px;color:var(--ink-soft);
+  padding:7px 12px;border-radius:9px;
+  transition:.18s;
+}
+.nav a:hover,.nav a:focus-visible{background:#e9edf6;color:var(--brand)}
+.nav .nav-cta{
+  background:var(--brand);color:#fff;font-weight:600;
+}
+.nav .nav-cta:hover,.nav .nav-cta:focus-visible{background:#25395f;color:#fff}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#1b2a4a 0%,#22375e 52%,#2b4a6f 100%);
+  color:#eef2fa;
+  padding:56px 0 60px;
+}
+.hero::after{
+  content:"";position:absolute;right:-90px;top:-90px;
+  width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,rgba(42,167,155,.55),rgba(42,167,155,0) 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:40px;align-items:center;position:relative;z-index:1;
+}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:.12em;
+  color:#9fd8d2;text-transform:uppercase;
+  border:1px solid rgba(159,216,210,.35);
+  padding:5px 12px;border-radius:999px;margin-bottom:20px;
+}
+.hero h1{
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.18;font-weight:800;letter-spacing:1px;
+  margin-bottom:18px;
+}
+.hero h1 .dot{color:var(--amber)}
+.hero p.lead{
+  font-size:16.5px;color:#c7d3e8;max-width:560px;
+  margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:11px;
+  font-size:15px;font-weight:600;transition:.18s;border:1px solid transparent;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover,.btn-primary:focus-visible{background:#f26a32}
+.btn-ghost{background:rgba(255,255,255,.08);color:#eef2fa;border-color:rgba(255,255,255,.26)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:rgba(255,255,255,.16)}
+.btn[aria-disabled="true"]{pointer-events:none}
+.hero-stats{
+  display:flex;gap:28px;margin-top:30px;flex-wrap:wrap;
+}
+.hero-stats div strong{display:block;font-size:22px;color:#fff;font-weight:800}
+.hero-stats div span{font-size:13px;color:#a9b8d4}
+
+/* hero visual */
+.hero-visual{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);
+  padding:20px;
+}
+.hero-visual .screen{
+  border-radius:12px;overflow:hidden;background:#12203a;
+  border:1px solid rgba(255,255,255,.1);
+}
+.hero-visual .caption{
+  margin-top:14px;font-size:13px;color:#a9b8d4;display:flex;justify-content:space-between;align-items:center;
+}
+.hero-visual .caption b{color:#9fd8d2;font-weight:600}
+
+/* ---------- Sections ---------- */
+section{padding:64px 0}
+.section-head{max-width:720px;margin-bottom:34px}
+.section-head .eyebrow{
+  font-size:13px;font-weight:700;letter-spacing:.14em;
+  color:var(--teal);text-transform:uppercase;margin-bottom:10px;
+}
+h2{font-size:clamp(23px,3vw,30px);line-height:1.35;font-weight:800;color:var(--brand);letter-spacing:.3px}
+.section-head p{margin-top:12px;color:var(--ink-soft);font-size:15.5px}
+
+/* quick categories */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;
+}
+.cat-card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px;
+  transition:.2s;position:relative;
+}
+.cat-card:hover{border-color:#c3d2ea;box-shadow:0 8px 22px rgba(27,42,74,.07);transform:translateY(-2px)}
+.cat-card .ico{
+  width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+  margin-bottom:14px;
+}
+.cat-card h3{font-size:17px;font-weight:700;color:var(--brand);margin-bottom:6px}
+.cat-card p{font-size:14px;color:var(--ink-soft);line-height:1.65}
+.ico-a{background:#e6f6f4;color:var(--teal)}
+.ico-b{background:#fdeee6;color:var(--accent)}
+.ico-c{background:#fdf3e1;color:#c88a1f}
+.ico-d{background:#e9edf9;color:#4059a6}
+
+/* schedule table */
+.schedule-wrap{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.sched-toolbar{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  padding:16px 18px;border-bottom:1px solid var(--line);background:#fbfcff;
+}
+.sched-toolbar .label{font-size:13.5px;color:var(--ink-soft);margin-right:4px}
+.chip{
+  font-size:13.5px;padding:6px 14px;border-radius:999px;
+  border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;
+  background:#fff;transition:.16s;font-family:inherit;
+}
+.chip:hover{border-color:#b9c8e2;color:var(--brand)}
+.chip.active{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+.sched-list{list-style:none}
+.sched-item{
+  display:grid;grid-template-columns:88px 1fr auto;
+  gap:16px;align-items:center;
+  padding:16px 20px;border-bottom:1px solid var(--line);
+}
+.sched-item:last-child{border-bottom:none}
+.sched-day{
+  font-size:13px;font-weight:700;color:var(--teal);
+  background:#e6f6f4;border-radius:8px;text-align:center;padding:6px 0;
+}
+.sched-item h3{font-size:15.5px;font-weight:700;color:var(--brand);margin-bottom:2px}
+.sched-item p{font-size:13.5px;color:var(--ink-soft)}
+.tag{
+  font-size:12.5px;color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:999px;padding:4px 11px;white-space:nowrap;
+}
+.tag.hot{color:#c85a2a;border-color:#f6d3c2;background:#fdf1ea}
+.empty-tip{padding:26px 20px;text-align:center;color:var(--ink-soft);font-size:14.5px;display:none}
+
+/* two column content */
+.content-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
+.prose h2{margin-bottom:16px}
+.prose p{color:var(--ink-soft);font-size:15.5px;margin-bottom:16px;max-width:70ch}
+.prose p strong{color:var(--ink);font-weight:700}
+.steps{list-style:none;counter-reset:s;margin:8px 0 18px}
+.steps li{
+  counter-increment:s;position:relative;padding-left:44px;
+  margin-bottom:16px;color:var(--ink-soft);font-size:15.5px;
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:1px;
+  width:28px;height:28px;border-radius:8px;background:#e9edf9;color:#4059a6;
+  font-size:13.5px;font-weight:700;display:grid;place-items:center;
+}
+.steps li b{color:var(--ink);font-weight:700}
+.aside-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;margin-bottom:18px;
+}
+.aside-card h3{font-size:16px;font-weight:700;color:var(--brand);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.aside-card ul{list-style:none}
+.aside-card li{
+  font-size:14.5px;color:var(--ink-soft);padding:9px 0;border-bottom:1px dashed var(--line);
+  display:flex;justify-content:space-between;gap:12px;
+}
+.aside-card li:last-child{border-bottom:none}
+.aside-card li span:last-child{color:var(--ink);font-weight:600;white-space:nowrap}
+.notice{
+  background:#fdf3e1;border:1px solid #f4dfb8;border-radius:12px;
+  padding:14px 16px;font-size:14px;color:#7a5a1c;line-height:1.7;
+}
+
+/* faq */
+.faq-list{display:grid;gap:12px;max-width:840px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:0 20px;transition:.18s;
+}
+details[open]{border-color:#c3d2ea;box-shadow:0 6px 18px rgba(27,42,74,.06)}
+summary{
+  cursor:pointer;list-style:none;padding:17px 0;
+  font-size:15.5px;font-weight:700;color:var(--brand);
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";font-size:20px;font-weight:400;color:var(--teal);flex:none;line-height:1;
+}
+details[open] summary::after{content:"–"}
+details p{font-size:14.5px;color:var(--ink-soft);padding:0 0 18px;max-width:66ch}
+
+/* download band */
+.band{
+  background:var(--brand);color:#eef2fa;border-radius:var(--radius);
+  padding:38px 34px;display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.band h2{color:#fff;font-size:23px;margin-bottom:8px}
+.band p{color:#b9c8e2;font-size:14.5px;max-width:52ch}
+.band .btn-primary{flex:none}
+
+/* footer */
+.site-footer{
+  background:#12203a;color:#a9b8d4;padding:46px 0 26px;font-size:14px;
+}
+.footer-top{
+  display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap;
+  padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-brand{max-width:340px}
+.footer-brand .logo .brand-text{color:#fff}
+.footer-brand p{margin-top:12px;font-size:13.5px;line-height:1.75;color:#8fa1c0}
+.footer-links{display:flex;gap:46px;flex-wrap:wrap}
+.footer-links h4{font-size:14px;color:#fff;margin-bottom:12px;font-weight:700}
+.footer-links a{display:block;font-size:13.5px;padding:4px 0;color:#8fa1c0;transition:.16s}
+.footer-links a:hover,.footer-links a:focus-visible{color:#9fd8d2}
+.footer-bottom{
+  padding-top:20px;font-size:12.5px;color:#7385a6;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{order:-1}
+  .content-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .header-inner{min-height:auto;padding:12px 0;gap:10px}
+  .nav{margin-left:0;width:100%;order:3;gap:4px}
+  .nav a{padding:6px 9px;font-size:13.5px}
+  .hero{padding:40px 0 46px}
+  .hero-stats{gap:18px}
+  section{padding:46px 0}
+  .sched-item{grid-template-columns:1fr auto;gap:10px 12px;padding:14px 16px}
+  .sched-day{grid-column:1/-1;width:fit-content;padding:4px 12px}
+  .sched-item h3{font-size:15px}
+  .band{padding:26px 22px}
+  .footer-links{gap:28px}
+  .prose p,.steps li{font-size:15px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="咕咕番 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="4" width="18" height="4" rx="1.4" fill="#59d1c8"/>
+          <rect x="3" y="10" width="12" height="4" rx="1.4" fill="#9fd8d2"/>
+          <rect x="3" y="16" width="15" height="4" rx="1.4" fill="#ffb454"/>
+        </svg>
+      </span>
+      <span class="brand-text">咕咕番</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#categories">番剧分类</a>
+      <a href="#schedule">更新表</a>
+      <a href="#guide">追番指南</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#schedule">查看今日更新</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" aria-label="咕咕番介绍">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">动漫追番 · 更新整理</span>
+        <h1>咕咕番<span class="dot">.</span></h1>
+        <p class="lead">咕咕番是一个把番剧分类、更新节奏与追番清单放在一起看的动漫主题页面。先弄清想看什么类型，再按更新表安排时间，追番就不会漏集。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#schedule">查看更新表</a>
+          <a class="btn btn-ghost" href="#guide">了解追番方法</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4</strong><span>番剧分类维度</span></div>
+          <div><strong>7</strong><span>每周更新日</span></div>
+          <div><strong>3</strong><span>追番步骤</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="screen">
+          <svg viewBox="0 0 340 200" role="img" aria-label="番剧播放列表示意图">
+            <rect width="340" height="200" fill="#12203a"/>
+            <rect x="18" y="18" width="140" height="10" rx="5" fill="#2aa79b" opacity=".85"/>
+            <rect x="18" y="38" width="90" height="8" rx="4" fill="#43597f"/>
+            <rect x="18" y="64" width="88" height="56" rx="8" fill="#1d3050" stroke="#2f4straight" />
+            <rect x="18" y="64" width="88" height="56" rx="8" fill="#1d3050"/>
+            <circle cx="62" cy="92" r="13" fill="#59d1c8" opacity=".9"/>
+            <path d="M58 86l11 6-11 6z" fill="#12203a"/>
+            <rect x="18" y="132" width="88" height="8" rx="4" fill="#3a5179"/>
+            <rect x="18" y="148" width="60" height="8" rx="4" fill="#2c4062"/>
+            <rect x="122" y="64" width="88" height="56" rx="8" fill="#1d3050"/>
+            <circle cx="166" cy="92" r="13" fill="#ffb454" opacity=".9"/>
+            <path d="M162 86l11 6-11 6z" fill="#12203a"/>
+            <rect x="122" y="132" width="88" height="8" rx="4" fill="#3a5179"/>
+            <rect x="122" y="148" width="54" height="8" rx="4" fill="#2c4062"/>
+            <rect x="226" y="64" width="88" height="56" rx="8" fill="#1d3050"/>
+            <circle cx="270" cy="92" r="13" fill="#7f9ad1" opacity=".9"/>
+            <path d="M266 86l11 6-11 6z" fill="#12203a"/>
+            <rect x="226" y="132" width="88" height="8" rx="4" fill="#3a5179"/>
+            <rect x="226" y="148" width="66" height="8" rx="4" fill="#2c4062"/>
+          </svg>
+        </div>
+        <div class="caption"><span>本周更新预览</span><b>按日排布</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Categories</div>
+        <h2>按类型挑番，比盲目翻列表快得多</h2>
+        <p>咕咕番把番剧按常见的四个维度归类。先确定自己今天想看的情绪和节奏，再进入对应的分类，选番的判断成本会明显降低。</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="ico ico-a" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+          </div>
+          <h3>热血与战斗</h3>
+          <p>节奏快、单集信息密度高，适合连续追看。看这类番建议先确认集数区间，再决定是否一次补齐。</p>
+        </article>
+        <article class="cat-card">
+          <div class="ico ico-b" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+          </div>
+          <h3>日常与治愈</h3>
+          <p>单集独立性强，断更影响小。适合通勤或睡前观看，一集一个片段也不会接不上剧情。</p>
+        </article>
+        <article class="cat-card">
+          <div class="ico ico-c" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>
+          </div>
+          <h3>悬疑与推理</h3>
+          <p>线索前后呼应，跳集容易看不懂。追这类番要按顺序看，并尽量避开剧透性质的讨论。</p>
+        </article>
+        <article class="cat-card">
+          <div class="ico ico-d" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5l7 4 7-4v14l-7-4-7 4z"/></svg>
+          </div>
+          <h3>科幻与奇幻</h3>
+          <p>世界观设定多，前期铺垫长。建议先看两到三集再判断是否继续，避免因开局慢热错过后续展开。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Schedule</div>
+        <h2>咕咕番更新表：按周排布，先看再追</h2>
+        <p>更新表列出每周各日的更新安排与类型标签。点击日期筛选可以只看某一天的内容，方便把追番时间固定下来。</p>
+      </div>
+      <div class="schedule-wrap">
+        <div class="sched-toolbar" role="group" aria-label="按更新日筛选">
+          <span class="label">筛选：</span>
+          <button class="chip active" data-day="all" type="button">全部</button>
+          <button class="chip" data-day="周一" type="button">周一</button>
+          <button class="chip" data-day="周三" type="button">周三</button>
+          <button class="chip" data-day="周五" type="button">周五</button>
+          <button class="chip" data-day="周六" type="button">周六</button>
+          <button class="chip" data-day="周日" type="button">周日</button>
+        </div>
+        <ul class="sched-list" id="schedList">
+          <li class="sched-item" data-day="周一">
+            <span class="sched-day">周一</span>
+            <div><h3>新番开播整理位</h3><p>适合安排节奏偏慢、需要静下来看的作品。</p></div>
+            <span class="tag">日常向</span>
+          </li>
+          <li class="sched-item" data-day="周三">
+            <span class="sched-day">周三</span>
+            <div><h3>周中更新缓冲位</h3><p>一集一集追，看完刚好接上周末的讨论。</p></div>
+            <span class="tag">连载中</span>
+          </li>
+          <li class="sched-item" data-day="周五">
+            <span class="sched-day">周五</span>
+            <div><h3>周末前的热门档</h3><p>讨论热度集中的时段，适合看完再去看评论。</p></div>
+            <span class="tag hot">热度高</span>
+          </li>
+          <li class="sched-item" data-day="周六">
+            <span class="sched-day">周六</span>
+            <div><h3>补番与连看时段</h3><p>时间整块，适合把前半季一次补完。</p></div>
+            <span class="tag">适合补番</span>
+          </li>
+          <li class="sched-item" data-day="周日">
+            <span class="sched-day">周日</span>
+            <div><h3>周总结与清单整理</h3><p>回看本周进度，把下周要追的加进清单。</p></div>
+            <span class="tag">整理清单</span>
+          </li>
+        </ul>
+        <p class="empty-tip" id="emptyTip">这一天暂时没有安排，可以切换到「全部」看看其他时段。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide + aside -->
+  <section id="guide">
+    <div class="wrap content-grid">
+      <div class="prose">
+        <div class="section-head" style="margin-bottom:20px">
+          <div class="eyebrow">Guide</div>
+          <h2>追番三步走：先定清单，再定时间</h2>
+        </div>
+        <p><strong>咕咕番</strong>的使用逻辑并不复杂：它更像一张整理好的追番桌面，而不是把所有内容一次塞给你。第一次来的时候，建议先做三件事，之后每周只维护清单即可。</p>
+        <ol class="steps">
+          <li><b>建立候选清单。</b>从分类里挑三到五部放进清单。数量不宜过多，超过五部很容易出现看了开头就搁置的情况。</li>
+          <li><b>对应更新日。</b>在更新表中找到每部作品的更新日，把观看时间固定到具体的某一天，避免想起来才去看。</li>
+          <li><b>每周复盘一次。</b>周末回顾本周进度，把不打算继续的作品移出清单，让清单始终保持可以完成的状态。</li>
+        </ol>
+        <p>追番最容易出问题的环节，往往不是找不到内容，而是清单越积越长。控制清单规模、固定观看时间，比反复更换平台更有效。咕咕番的更新表与分类页面，正是为这两个动作服务的。</p>
+        <p>如果某周时间被打乱，不必急着一次性补齐。悬疑类作品按顺序补，日常类作品可以跳着看，热血类作品适合整段连看，根据类型调整补看方式，比机械地按集数追更省力。</p>
+        <div class="notice">
+          说明：本页为动漫追番主题的内容整理页，更新表用于演示按周排布的追番方法，具体作品与播出安排请以实际播出信息为准。
+        </div>
+      </div>
+
+      <aside aria-label="追番补充信息">
+        <div class="aside-card">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2aa79b" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 19V5l7 4 7-4v14l-7-4-7 4z"/></svg>
+            清单参考规模
+          </h3>
+          <ul>
+            <li><span>同时追看</span><span>3–5 部</span></li>
+            <li><span>每周可用时间</span><span>约 4 小时</span></li>
+            <li><span>补番最佳时段</span><span>周末整块</span></li>
+            <li><span>清单复盘频率</span><span>每周一次</span></li>
+          </ul>
+        </div>
+        <div class="aside-card">
+          <h3>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff7a45" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>
+            按类型选补看方式
+          </h3>
+          <ul>
+            <li><span>悬疑推理</span><span>按序补</span></li>
+            <li><span>日常治愈</span><span>可跳看</span></li>
+            <li><span>热血战斗</span><span>整段连看</span></li>
+            <li><span>科幻奇幻</span><span>先看三集</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>关于咕咕番的常见问题</h2>
+        <p>下面几个问题，是初次接触咕咕番时最常被问到的。回答只针对本页提供的内容整理功能。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>咕咕番主要用来做什么？</summary>
+          <p>咕咕番是一个动漫追番主题的内容整理页面，主要提供番剧分类、按周排布的更新表和追番方法说明，帮助你把想看的内容和观看时间对应起来。</p>
+        </details>
+        <details>
+          <summary>更新表里的时间可以直接当作播出时间吗？</summary>
+          <p>更新表用于演示按周排布的追番方法，展示的是各时段的安排思路，不等同于具体作品的官方播出时间。实际安排请以播出平台的公告为准。</p>
+        </details>
+        <details>
+          <summary>一周追几部比较合适？</summary>
+          <p>按本页的参考规模，同时追看三到五部、每周投入约四小时比较稳妥。超过这个量容易出现开了头却看不完的情况，反而增加追番压力。</p>
+        </details>
+        <details>
+          <summary>名单太长时该怎么精简？</summary>
+          <p>建议在周末做一次复盘，把两周内没有打开过的作品移出清单。保留正在稳定追看的几部，清单长度控制住之后，追番节奏自然就稳定了。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download band -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>把咕咕番的追番清单带走</h2>
+          <p>下载追番清单模板，按分类与更新日填写，打印或放在本地都能用。清单里预留了作品名、更新日与进度三栏。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#top" aria-label="咕咕番 返回顶部">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="4" rx="1.4" fill="#59d1c8"/>
+              <rect x="3" y="10" width="12" height="4" rx="1.4" fill="#9fd8d2"/>
+              <rect x="3" y="16" width="15" height="4" rx="1.4" fill="#ffb454"/>
+            </svg>
+          </span>
+          <span class="brand-text">咕咕番</span>
+        </a>
+        <p>咕咕番，专注把番剧分类、更新节奏与追番清单整理到一页，让每次打开都有明确的下一个动作。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>内容导航</h4>
+          <a href="#categories">番剧分类</a>
+          <a href="#schedule">更新表</a>
+          <a href="#guide">追番指南</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div>
+          <h4>使用提示</h4>
+          <a href="#guide">如何建立清单</a>
+          <a href="#guide">按类型补看</a>
+          <a href="#schedule">筛选更新日</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>咕咕番 · 动漫追番内容整理页</span>
+      <span>页面内容以整理与演示为主，具体播出信息以实际平台为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip[data-day]');
+  var items = document.querySelectorAll('#schedList .sched-item');
+  var emptyTip = document.getElementById('emptyTip');
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var day = chip.getAttribute('data-day');
+      var visible = 0;
+      items.forEach(function(item){
+        var match = (day === 'all') || (item.getAttribute('data-day') === day);
+        item.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      emptyTip.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>
+
+</body>
+                </html>
